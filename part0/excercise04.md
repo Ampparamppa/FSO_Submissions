@@ -6,23 +6,23 @@ sequenceDiagram
     participant Server
 
 Browser ->> Server: Post request to the server @ https://fullstack-exampleapp.herokuapp.com/new_note
-activate server
+activate Server
 Server ->> Browser: URL Redirect
-deactivate server
+deactivate Server
 
 Browser ->> Server: Get request to the server for CSS
-activate server
+activate Server
 Server --> Browser: Browser receives CSS and manipulates HTML
-Deactivate server
+Deactivate Server
 
 Browser ->> Server: Get request to the server for main.js
-activate server
+activate Server
 Server --> Browser: Browser receives main.js and manipulates HTML
-Deactivate server
+Deactivate Server
 
 Browser ->> Server: Get request to the server for data.json
-activate server
+activate Server
 Server --> Browser: Browser receives data.json
-Deactivate server
+Deactivate Server
 
 ```
