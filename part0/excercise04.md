@@ -10,7 +10,7 @@ activate server
 Server ->> Browser: URL Redirect
 deactivate server
 
-Page reaload
+serverPage realoadBrowser ->> Server
 
 Browser ->> Server: Get request to the server for CSS
 activate server
