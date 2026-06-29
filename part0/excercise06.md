@@ -7,4 +7,4 @@ Browser ->> Server: Post /new_note_spa
 activate Server
 Server ->> Browser: 201 created status
 deactivate Server
-Note: Browser appens new to the DOM locally
+Note right of Browser: Browser appens new to the DOM locally
