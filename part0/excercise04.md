@@ -1,28 +1,30 @@
-# Exercise 0.4
-
 ```mermaid
 sequenceDiagram
     participant Browser
     participant Server
 
-Browser ->> Server: Post request to the server @ https://fullstack-exampleapp.herokuapp.com/new_note
-activate Server
-Server ->> Browser: URL Redirect
-deactivate Server
+    Browser->>Server: POST https://fullstack-exampleapp.herokuapp.com/new_note
+    activate Server
+    Server-->>Browser: URL redirect
+    deactivate Server
 
-Browser ->> Server: Get request to the server for CSS
-activate Server
-Server --> Browser: Browser receives CSS and manipulates HTML
-deactivate Server
+    Browser->>Server: GET /notes (redirected page)
+    activate Server
+    Server-->>Browser: HTML document
+    deactivate Server
 
-Browser ->> Server: Get request to the server for main.js
-activate Server
-Server --> Browser: Browser receives main.js and manipulates HTML
-deactivate Server
+    Browser->>Server: GET /main.css
+    activate Server
+    Server-->>Browser: CSS file
+    deactivate Server
 
-Browser ->> Server: Get request to the server for data.json
-activate Server
-Server --> Browser: Browser receives data.json
-deactivate Server
+    Browser->>Server: GET /main.js
+    activate Server
+    Server-->>Browser: JavaScript file
+    deactivate Server
 
+    Browser->>Server: GET /data.json
+    activate Server
+    Server-->>Browser: data.json (notes list)
+    deactivate Server
 ```
