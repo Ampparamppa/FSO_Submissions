@@ -1,7 +1,7 @@
-
+```mermaid
 sequenceDiagram
-    participant browser
-    participant server
+    participant Browser
+    participant Server
 
     Browser ->> Server: Get SPA Document
     activate Server
