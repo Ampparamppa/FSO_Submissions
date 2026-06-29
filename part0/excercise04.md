@@ -10,8 +10,6 @@ activate server
 Server ->> Browser: URL Redirect
 deactivate server
 
-Note right of browser: Page reloads
-
 Browser ->> Server: Get request to the server for CSS
 activate server
 Server --> Browser: Browser receives CSS and manipulates HTML
