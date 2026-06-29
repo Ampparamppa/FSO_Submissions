@@ -13,16 +13,16 @@ deactivate Server
 Browser ->> Server: Get request to the server for CSS
 activate Server
 Server --> Browser: Browser receives CSS and manipulates HTML
-Deactivate Server
+deactivate Server
 
 Browser ->> Server: Get request to the server for main.js
 activate Server
 Server --> Browser: Browser receives main.js and manipulates HTML
-Deactivate Server
+deactivate Server
 
 Browser ->> Server: Get request to the server for data.json
 activate Server
 Server --> Browser: Browser receives data.json
-Deactivate Server
+deactivate Server
 
 ```
