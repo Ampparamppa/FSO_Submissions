@@ -3,4 +3,7 @@ sequenceDiagram
     participant Browser
     participant Server
 
-
+Browser ->> Server: Post /new_note_spa
+activate Server
+Server ->> Browser: 201 created status
+deactivate browser
