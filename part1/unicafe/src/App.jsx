@@ -9,8 +9,6 @@ const App = () => {
   const submitneutral = () => setNeutral(neutral + 1)
   const submitbad = () => setBad(bad + 1)
 
-  const total = good + neutral + bad
-
   return (
     <div>
       <Header/>
@@ -18,12 +16,7 @@ const App = () => {
       <Button onClick={submitneutral} text="neutral"/>
       <Button onClick={submitbad} text="bad"/>
       <SubHeader/>
-      <p>Good {good}</p>
-      <p>Neutral {neutral}</p>
-      <p>Bad {bad}</p>
-      <p>All {total}</p>
-      <p>Average {(good - bad) / total}</p>
-      <p>Positive {(good / total) * 100} %</p>
+      <Statistics good={good} bad={bad} neutral={neutral}/>
     </div>
   )
 }
@@ -40,6 +33,20 @@ const SubHeader = () => {
   return (
     <div>
       <p>Statistics</p>
+    </div>
+  )
+}
+
+const Statistics = (props) => {
+  const total = props.good + props.neutral + props.bad
+  return(
+    <div>
+      <p>Good {props.good}</p>
+      <p>Neutral {props.neutral}</p>
+      <p>Bad {props.bad}</p>
+      <p>All {total}</p>
+      <p>Average {(props.good - props.bad) / total}</p>
+      <p>Positive {(props.good / total) * 100} %</p>
     </div>
   )
 }
