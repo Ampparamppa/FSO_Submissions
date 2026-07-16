@@ -39,18 +39,38 @@ const SubHeader = () => {
 
 const Statistics = (props) => {
   const total = props.good + props.neutral + props.bad
+  const average = ((props.good - props.bad)/total)
+  const positive = props.good/total*100
+  if (total ===0) {
+    return(
+      <div>
+        You need to press the buttons
+      </div>
+    )
+  }
   return(
-    <div>
-      <p>Good {props.good}</p>
-      <p>Neutral {props.neutral}</p>
-      <p>Bad {props.bad}</p>
-      <p>All {total}</p>
-      <p>Average {(props.good - props.bad) / total}</p>
-      <p>Positive {(props.good / total) * 100} %</p>
-    </div>
+    <table>
+      <tbody>
+        <tr><StatisticLine text="good" value={props.good} /></tr>
+        <tr><StatisticLine text="neutral" value={props.neutral} /></tr>
+        <tr><StatisticLine text="bad" value={props.bad} /></tr>
+        <tr><StatisticLine text="All" value={total} /></tr>
+        <tr><StatisticLine text="Average" value={average}/></tr>
+        <tr><StatisticLine text="Positive"  value={positive + " %"}/></tr>
+      </tbody>
+    </table>
   )
 }
 
 const Button = ({ onClick, text }) => <button onClick={onClick}>{text}</button>
+
+const StatisticLine = ({text, value}) => {
+  return(
+    <>
+      <td>{text}</td> 
+      <td>{value}</td>
+    </>
+  )
+}
 
 export default App
